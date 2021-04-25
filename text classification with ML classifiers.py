@@ -50,7 +50,7 @@ print("Accuracy with SVM: ", score_svm*100)
 # defining parameter range
 print(svm.LinearSVC().get_params().keys())
 param_grid = [{'C': [1, 10], 'kernel': ['linear']}]
-grid = GridSearchCV(svm.SVC(), param_grid, refit=True, verbose=3, n_jobs=-1)
+grid = GridSearchCV(svm.LinearSVC(), param_grid, refit=True, verbose=3, n_jobs=-1)
 grid.fit(x_train, y_train)  # fitting the model for grid search
 
 # # print best parameter after tuning
